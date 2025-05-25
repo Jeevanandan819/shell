@@ -56,7 +56,7 @@ void st_shell_parse_command(char *buffer, st_shell_command_t *input_command)
     token = strtok(NULL, ST_SHELL_ARG_SEPERATOR);
     int arg_pos = 0;
     while (token != NULL) {
-        char *arg = (char*)calloc(strlen(token), sizeof(char));
+        char *arg = (char*)calloc(strlen(token) + 1, sizeof(char));
         strcpy(arg, token);
         argv[arg_pos] = arg;
         arg_pos++;
